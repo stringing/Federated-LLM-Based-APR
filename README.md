@@ -2,11 +2,20 @@
 This is the artifact for the work "When Fine-Tuning LLMs Meets Data Privacy: An Empirical Study of Federated Learning in LLM-Based Program Repair".
 
 ## I. Environments
-- Ubuntu 20.04
-- Transformers 4.38.2
+- Recommended system: Ubuntu 20.04
+- Transformers version 4.38.2
 - Federated learning package & others (e.g., Python, Pytorch, Cuda, etc.): Please refer to the installation of [FederatedScope](https://github.com/alibaba/FederatedScope/tree/llm)
 
-## II. Model
+## II. Project Structure
+```
+├── Model
+├── Data
+├── FederatedScope
+│   ├── federatedscope
+├── RoPGen
+```
+
+## III. Model
 The code LLMs used in this study are available via HuggingFace:
 - [CodeLlama-13B-Instruct](https://huggingface.co/meta-llama/CodeLlama-13b-Instruct-hf)
 - [CodeLlama-7B-Instruct](https://huggingface.co/meta-llama/CodeLlama-7b-Instruct-hf)
@@ -15,9 +24,9 @@ The code LLMs used in this study are available via HuggingFace:
 - [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
 - [CodeQwen1.5-7B-Chat](https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat)
 
-## III. Data
+## IV. Data
 ### TutorCode
-The fine-tuning dataset TutorCode restrics its access to prevent data leakage caused by web crawlers, which collect web data as the pretraining corpora for LLMs. Please use the dataset via the official API of [TutorCode](https://github.com/buaabarty/CREF).
+The fine-tuning dataset TutorCode restricts its access to prevent data leakage caused by web crawlers, which collect web data as the pretraining corpora for LLMs. Please use the dataset via the official API of [TutorCode](https://github.com/buaabarty/CREF).
 
 ### Fine-tuning Dataset
 After acquiring the original json files from the TutorCode API, the formatted fine-tuning dataset can be constructed by [extract_from_morepair.py](FederatedScope/federatedscope/llm/MyUtils/extract_from_tutorcode.py):
@@ -25,23 +34,22 @@ After acquiring the original json files from the TutorCode API, the formatted fi
 python extract_from_tutorcode.py <directory of the json files> <path to the fine-tuning dataset>
 ```
 
-## IV. Experiments
-Set the current directory to the federated learning package:
-```
-cd ./FederatedScope
-```
+### Evaluation Benchmark
+In the directory eval_java is the [EvalRepair-Java](https://github.com/buaabarty/morepair) benchmark, which consists of augmented test cases from HumanEval-Java.
+
+## V. Experiments
 ### RQ1. Effectiveness of Federated Fine-tuning
 #### Federated Fine-tuning
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>.yaml
 ```
 #### Centralized Fine-tuning
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>_global.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>_global.yaml
 ```
 #### Local fine-tuning
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>_local.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq1/finetune_<model name>_local.yaml
 ```
 The model name can be referred to as follows:
 |Model|\<model name>|
@@ -54,15 +62,40 @@ The model name can be referred to as follows:
 |CodeQwen1.5-7B-Chat|codeqwen7b|
 ### RQ2. Impact of Data Heterogeneity
 #### Construction of Heterogeneous Code
+**1. Heterogeneous Coding Style**
+```
+# preprocessing
+# extract cpp files from original crawled TutorCode json files and save it to the specified directory
+python FederatedScope/federatedscope/llm/MyUtils/extract_cpp.py <directory of the original TutorCode json files> RoPGen/src/coding style attacks/author-style-transform/transform/program_file/target_author_file
+
+# put each cpp file in a directory to satisfy the format of RoPGen input
+python FederatedScope/federatedscope/llm/MyUtils/put_in_dir.py RoPGen/src/coding style attacks/author-style-transform/transform/program_file/target_author_file
+
+# extract coding style
+# the extracted coding styles will be saved in 'RoPGen/src/coding style attacks/author-style-transform/transform/author_style'
+python RoPGen/src/coding style attacks/author-style-transform/transform/get_style.py
+
+# encode and cluster coding styles
+python FederatedScope/federatedscope/llm/MyUtils/style_clustering.py RoPGen/src/coding style attacks/author-style-transform/transform/author_style <fine-tuning dataset path> <clustered fine-tuning dataset path> <cluster number>
+```
+
+**2. Heterogeneous Code Complexity**
+The numbers of modified hunks are used to indicate the code complexity of each bug-fix pair, as can be referred to in *data/TutorCode/hunks.json*.
+
+**3. Heterogeneous Code Embedding**
+```
+# use CodeBERT to extract context information
+python FederatedScope/federatedscope/llm/MyUtils/extract_embeddings.py
+```
 
 #### Fine-tuning with Different Heterogeneity
 Fine-tuning with the IID distribution:
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq2/<code feature>/finetune_<model name>.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq2/<code feature>/finetune_<model name>.yaml
 ```
 Fine-tuning with the Non-IID distribution:
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq2/<code feature>/finetune_<model name>_<non-iid degree>.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq2/<code feature>/finetune_<model name>_<non-iid degree>.yaml
 ```
 The specific code features and Non-IID degrees can be referred to as follows:
 
@@ -80,7 +113,7 @@ The specific code features and Non-IID degrees can be referred to as follows:
 
 ### RQ3. Impact of Federated Algorithms
 ```
-python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq3/finetune_<model name>_<algorithm>.yaml
+python FederatedScope/federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq3/finetune_<model name>_<algorithm>.yaml
 ```
 The specific algorithms can be referred to as follows:
 
@@ -92,16 +125,16 @@ The specific algorithms can be referred to as follows:
 |FedSWA|fedswa|
 |pFedMe|per|
 
-## V. Inference & Evaluation
+## VI. Inference & Evaluation
 After fine-tuning the LLMs, merge the fine-tuned adapter with the base model:
 ```
-python federatedscope/llm/MyUtils/merge_model.py <directory of the original model> <directory of the fine-tuned adapter> <directory of the merged model>
+python FederatedScope/federatedscope/llm/MyUtils/merge_model.py <directory of the original model> <directory of the fine-tuned adapter> <directory of the merged model>
 ```
 ### Inference
 ```
-python federatedscope/llm/eval/eval_for_code/inference_java.py <model name> <base model> <model name> <device> <directory of fixes>
+python FederatedScope/federatedscope/llm/eval/eval_for_code/inference_java.py <model name> <base model> <model name> <device> <directory of fixes>
 ```
 ### Evaluation
 ```
-python federatedscope/llm/eval/eval_for_code/calc_java.py <model name> <directory of fixes>
+python FederatedScope/federatedscope/llm/eval/eval_for_code/calc_java.py <model name> <directory of fixes>
 ```
