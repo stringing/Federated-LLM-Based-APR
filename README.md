@@ -6,10 +6,7 @@ This is the artifact for the work "When Fine-Tuning LLMs Meets Data Privacy: An 
 - Transformers 4.38.2
 - Federated learning package & others (e.g., Python, Pytorch, Cuda, etc.): Please refer to the installation of [FederatedScope](https://github.com/alibaba/FederatedScope/tree/llm)
 
-## II. Project Structure
-To be uploaded.
-
-## III. Model
+## II. Model
 The code LLMs used in this study are available via HuggingFace:
 - [CodeLlama-13B-Instruct](https://huggingface.co/meta-llama/CodeLlama-13b-Instruct-hf)
 - [CodeLlama-7B-Instruct](https://huggingface.co/meta-llama/CodeLlama-7b-Instruct-hf)
@@ -18,7 +15,7 @@ The code LLMs used in this study are available via HuggingFace:
 - [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
 - [CodeQwen1.5-7B-Chat](https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat)
 
-## IV. Data
+## III. Data
 ### TutorCode
 The fine-tuning dataset TutorCode restrics its access to prevent data leakage caused by web crawlers, which collect web data as the pretraining corpora for LLMs. Please use the dataset via the official API of [TutorCode](https://github.com/buaabarty/CREF).
 
@@ -28,7 +25,7 @@ After acquiring the original json files from the TutorCode API, the formatted fi
 python extract_from_tutorcode.py <directory of the json files> <path to the fine-tuning dataset>
 ```
 
-## V. Experiments
+## IV. Experiments
 Set the current directory to the federated learning package:
 ```
 cd ./FederatedScope
@@ -95,7 +92,7 @@ The specific algorithms can be referred to as follows:
 |FedSWA|fedswa|
 |pFedMe|per|
 
-## VI. Inference & Evaluation
+## V. Inference & Evaluation
 After fine-tuning the LLMs, merge the fine-tuned adapter with the base model:
 ```
 python federatedscope/llm/MyUtils/merge_model.py <directory of the original model> <directory of the fine-tuned adapter> <directory of the merged model>
