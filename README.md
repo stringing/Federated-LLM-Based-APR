@@ -82,5 +82,29 @@ The specific code features and Non-IID degrees can be referred to as follows:
 |Extreme Non-IID|ex|
 
 ### RQ3. Impact of Federated Algorithms
+```
+python federatedscope/main.py --cfg federatedscope/llm/MyScripts/<model name>/rq3/finetune_<model name>_<algorithm>.yaml
+```
+The specific algorithms can be referred to as follows:
+
+|Federated Algorithm|\<algorithm>|
+|:---:|:---:|
+|FedAvg|fedavg|
+|FedOPT|fedopt|
+|FedProx|fedprox|
+|FedSWA|fedswa|
+|pFedMe|per|
 
 ## VI. Inference & Evaluation
+After fine-tuning the LLMs, merge the fine-tuned adapter with the base model:
+```
+python federatedscope/llm/MyUtils/merge_model.py <directory of the original model> <directory of the fine-tuned adapter> <directory of the merged model>
+```
+### Inference
+```
+python federatedscope/llm/eval/eval_for_code/inference_java.py <model name> <base model> <model name> <device> <directory of fixes>
+```
+### Evaluation
+```
+python federatedscope/llm/eval/eval_for_code/calc_java.py <model name> <directory of fixes>
+```
