@@ -7,7 +7,7 @@ This is the artifact for the work "When Fine-Tuning LLMs Meets Data Privacy: An 
 - Federated learning package & others (e.g., Python, Pytorch, Cuda, etc.): Please refer to the installation of [FederatedScope](https://github.com/alibaba/FederatedScope/tree/llm)
 
 ## II. Project Structure
-To be continued
+To be uploaded.
 
 ## III. Model
 The code LLMs used in this study are available via HuggingFace:
