@@ -6,13 +6,17 @@ This is the artifact for the work "When Fine-Tuning LLMs Meets Data Privacy: An 
 - Transformers version 4.38.2
 - Federated learning package & others (e.g., Python, Pytorch, Cuda, etc.): Please refer to the installation of [FederatedScope](https://github.com/alibaba/FederatedScope/tree/llm)
 
-## II. Project Structure
+## II. Main Project Structure
 ```
-├── Model
-├── Data
-├── FederatedScope
+├── Model                      # directory where the llms and the fine-tuned llms are saved
+├── Data                       # directory of the datasets
+│   ├── eval_java              # the EvalRepair-Java benchmark
+├── FederatedScope             # the federated learning package on which we develop our components
 │   ├── federatedscope
-├── RoPGen
+│   ├──   ├── llm
+│   ├──   ├──   ├── MyScripts  # the fine-tuning scripts
+│   ├──   ├──   ├── MyUtils    # some preprocessing and intermediate utils
+├── RoPGen                     # coding style extractor
 ```
 
 ## III. Model
@@ -83,8 +87,8 @@ python FederatedScope/federatedscope/llm/MyUtils/style_clustering.py RoPGen/src/
 The numbers of modified hunks are used to indicate the code complexity of each bug-fix pair, as can be referred to in *data/TutorCode/hunks.json*.
 
 **3. Heterogeneous Code Embedding**
+We use [CodeBERT](https://huggingface.co/microsoft/codebert-base), which has been pretrained to capture the context information from the NL-PL pairs.
 ```
-# use CodeBERT to extract context information
 python FederatedScope/federatedscope/llm/MyUtils/extract_embeddings.py
 ```
 
