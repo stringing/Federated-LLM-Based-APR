@@ -1,0 +1,11 @@
+{'Role': 'Client #3', 'Round': 0, 'Results_raw': {'train_loss': 4.475250594317913, 'train_total': 30, 'train_avg_loss': 0.1491750198105971}}
+{'Role': 'Client #9', 'Round': 0, 'Results_raw': {'train_loss': 6.33647108450532, 'train_total': 30, 'train_avg_loss': 0.211215702816844}}
+{'Role': 'Client #5', 'Round': 0, 'Results_raw': {'train_loss': 3.5986861996352673, 'train_total': 30, 'train_avg_loss': 0.11995620665450892}}
+{'Role': 'Client #10', 'Round': 0, 'Results_raw': {'train_loss': 4.391454025171697, 'train_total': 30, 'train_avg_loss': 0.14638180083905658}}
+{'Role': 'Client #2', 'Round': 0, 'Results_raw': {'train_loss': 3.960102355107665, 'train_total': 30, 'train_avg_loss': 0.13200341183692216}}
+{'Role': 'Client #7', 'Round': 0, 'Results_raw': {'train_loss': 4.479387673083693, 'train_total': 30, 'train_avg_loss': 0.1493129224361231}}
+{'Role': 'Client #8', 'Round': 0, 'Results_raw': {'train_loss': 4.9207230200991035, 'train_total': 29, 'train_avg_loss': 0.1696801041413484}}
+{'Role': 'Client #4', 'Round': 0, 'Results_raw': {'train_loss': 4.385446664411575, 'train_total': 29, 'train_avg_loss': 0.15122229877281293}}
+{'Role': 'Client #1', 'Round': 0, 'Results_raw': {'train_loss': 3.5079883984290063, 'train_total': 30, 'train_avg_loss': 0.11693294661430022}}
+{'Role': 'Client #6', 'Round': 0, 'Results_raw': {'train_loss': 4.523743799887598, 'train_total': 30, 'train_avg_loss': 0.15079145999625326}}
+{'Role': 'Client #4', 'Round': 1, 'Results_raw': {'train_loss': 2.6969453683122993, 'train_total': 30, 'train_avg_loss': 0.08989817894374331}}

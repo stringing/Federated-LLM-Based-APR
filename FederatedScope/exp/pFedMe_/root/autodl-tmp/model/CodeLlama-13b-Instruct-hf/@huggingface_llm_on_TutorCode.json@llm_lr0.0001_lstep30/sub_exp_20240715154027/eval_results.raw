@@ -1,0 +1,3 @@
+{'Role': 'Client #29', 'Round': 0, 'Results_raw': {'train_loss': 20.509176205145195, 'train_total': 154, 'train_avg_loss': 0.13317646886457918}}
+{'Role': 'Client #12', 'Round': 0, 'Results_raw': {'train_loss': 23.28842852055095, 'train_total': 131, 'train_avg_loss': 0.17777426351565612}}
+{'Role': 'Client #11', 'Round': 0, 'Results_raw': {'train_loss': 14.02645151130855, 'train_total': 75, 'train_avg_loss': 0.187019353484114}}

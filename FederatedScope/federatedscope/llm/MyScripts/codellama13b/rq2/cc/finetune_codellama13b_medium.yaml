@@ -1,0 +1,166 @@
+# -----------------Config-----------------
+# The configurations related to environment of running experiment.
+
+# backend: 'torch'
+use_gpu: True
+# check_completeness: False # Whether to check the completeness of msg_handler
+# verbose: 1 # Whether to print verbose logging info
+# print_decimal_digits: # 6 How many decimal places we print out using logger
+device: 2
+seed: 333 # Random seed
+# outdir: '' # The dir used to save log, exp_config, models, etc,.
+# expname: '' # Detailed exp name to distinguish different sub-exp
+# expname_tag: '' # Detailed exp tag to distinguish different sub-exp with the same expname
+
+early_stop:
+  patience: 10
+  # delta: 0. # Minimum change in the monitored metric to indicate a improvement
+  # improve_indicaator_mode: best # Early stop when there is no improvement within the last early_step.patience rounds, in ['mean', 'best']
+
+# -----------------FL Setting-----------------
+federate:
+  mode: standalone
+  eff_samp: True
+  client_num: 8 # It can set to 0 to automatically specify by the partition of dataset.
+  sample_client_num: 5 # The number of sampled clients in each training round.
+  # sample_client_rate: 0.05 # The ratio of sampled clients in each training round.
+  # unseen_clients_rate: 0.0 # The ratio of clients served as unseen clients, which would not be used for training and only for evaluation.
+  total_round_num: 10
+  # save_to: "/root/autodl-tmp/model/finetuned_mistral7b/mistral7b.ckpt"
+  share_local_model: True
+  # data_weighted_aggr: False # If True, the weight of aggregator is the number of training samples in dataset.
+  online_aggr: False
+  make_global_eval: True # If True, the evaluation would be performed on the server's test data, otherwise each client would perform evaluation on local test set and the results would be merged.
+  # use_diff: False # If True, the clients would return the variation in local training (i.e., ) instead of the updated models to the server for federated aggregation.
+  # merge_test_data: False # If True, clients' test data would be merged and perform global evaluation for efficient simulation.
+  # method: FedAvg
+  # ignore_weight: False # If True, the model updates would be averaged in federated aggregation.
+  # use_ss: False # If True, additively secret sharing would be applied in the FL course.
+  # restore_from: '' # The checkpoint file to restore the model.
+  # save_to: '' # The path to save the model.
+  # join_in_info: [] # The information requirements (from server) for joining in the FL course.
+  # sampler: uniform # The sample strategy of server used for client selection in a training round.
+  # resource_info_file: '' # the device information file to record computation and communication ability
+  # process_num: 1 # The number of parallel processes. It only takes effect when use_gpu=True, backend='torch', federate.mode='standalone' and federate.share_local_model=False, and the value is required to be not greater than the number of GPUs.
+
+# -----------------Data-----------------
+data:
+  root: /root/autodl-tmp/data/TutorCode
+  type: 'TutorCode_df.json@llm'
+  mo: False # enable morepair
+  # weight_beta: 1
+  # file_path: '' # The path to the data file, only makes effect when data.type = 'file'
+  # args: [] # Args for the external dataset
+  # save_data: False # Whether to save the generated toy data
+  splits: [1,0,0] # Train, valid, test splits
+  splitter: 'lda'
+  splitter_args: [{'alpha': 0.001}] # Used for splitter, eg. [{'alpha': 0.5}]
+  # transform: [] # Transform for x of data
+  # target_transform: [] # Transform for y of data
+  # server_holds_all: False # Only use in global mode, whether the server (workers with idx 0) holds all data, useful in global training/evaluation case
+  consistent_label_distribution: False # Make label distribution of train/val/test set over clients keep consistent during splitting
+
+dataloader:
+  batch_size: 1
+  # drop_last: False # Whether drop last batch (if the number of last batch is smaller than batch_size) in DataLoader
+  # shuffle: True # Shuffle train DataLoader
+  # num_workers: 0 # num_workers in DataLoader
+
+llm:
+  merge_to: '/root/autodl-tmp/model/finetuned_codellama13b_k5_mode'
+  tok_len: 2048 # Max token length for model input (training)
+  chat:
+    max_len: 2048 # Max token length for model input (inference)
+    # max_history_len: 10 # Max number of history texts
+  # cache:
+     # model: '' # Path for store model cache, default in `~/.cache/`
+  adapter:
+    use: True
+    args: [ { 'adapter_package': 'peft', 'adapter_method': 'qlora', 'r': 32, 'lora_alpha': 32, 'lora_dropout': 0.05, 'load_in_4bit': True, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_compute_dtype': True, 'bnb_4bit_use_double_quant': True, 'module_int4': True, } ]
+    # args: [ { 'adapter_package': 'peft', 'adapter_method': 'qlora-pissa', 'load_in_4bit': True, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_compute_dtype': True, 'bnb_4bit_use_double_quant': False, 'module_int4': False, 'adapter_path': '/root/autodl-tmp/model/CodeLlama-13b-Instruct-hf/', 'subfolder': 'pissa_init', } ]
+    mv_to_cpu: True
+  # deepspeed:
+  #   use: True
+  #   ds_config: 'federatedscope/llm/baseline/deepspeed/ds_config_apr.json'
+
+# -----------------Model-----------------
+model:
+  # model_num_per_trainer: 1 # Number of model per trainer
+  type: '/root/autodl-tmp/model/CodeLlama-13b-Instruct-hf/@huggingface_llm'
+  # task: '' # The task type of model, the default is Classification
+  # hidden: 256 # Hidden layer dimension
+  # dropout: 0.5 # Dropout ratio
+  # in_channels: 0 # Input channels dimension
+  # out_channels: 1 # Output channels dimension
+  # layer: 2 # Model layer
+  # embed_size: 8 # embed_size in LSTM
+
+# -----------------Local Training-----------------
+# The configurations related to federated training are defined in cfg_training.py. Considering it's infeasible to list all the potential arguments for optimizers and schedulers, 
+# we allow the users to add new parameters directly under the corresponding namespace. For example, we haven't defined the argument train.optimizer.weight_decay in cfg_training.py, 
+# but the users are allowed directly use it. If the optimizer doesn't require the argument named weight_decay, an error will be raised.
+train:
+  local_update_steps: 30
+  batch_or_epoch: batch
+  is_enable_half: False
+  # You can add new parameters under train.optimizer according to the optimizer, e.g., you can set momentum by cfg.train.optimizer.momentum.
+  optimizer:
+    type: 'AdamW' # The type of optimizer used in local training.
+    lr: 0.0001
+    weight_decay: 0.00
+
+# quantization:
+#     method: 'uniform' # ['none', 'uniform']
+#     nbits: 8 # [8,16]
+
+# -----------------Fine tuning-----------------
+# finetune:
+  # before_eval: False
+  # local_update_steps: 1
+  # batch_or_epoch: batch
+  # optimizer:
+    # type: SGD
+    # lr: 0.1
+
+# grad:
+  # grad_clip: -1.0 # The threshold used in gradient clipping.
+
+# -----------------Criterion-----------------
+criterion:
+  type: CrossEntropyLoss
+
+# -----------------Regularizer-----------------
+# regularizer:
+  # type: '' # The type of the regularizer
+  # mu: 0 # The factor that controls the loss of the regularization term
+
+trainer:
+  type: llmtrainer
+
+# -----------------Evaluation-----------------
+eval:
+  freq: 20
+  metrics: ['loss']
+  # split: [] # The data splits' names we conduct evaluation.
+  # report: [] # By default, we report comprehensive results, - weighted_avg and avg indicate the weighted average and uniform average over all evaluated clients; - fairness indicates report fairness-related results such as individual performance and std across all evaluated clients; - raw indicates that we save and compress all clients' individual results without summarization, and users can flexibly post-process the saved results further.
+  # best_res_update_round_wise_key: val_loss # The metric name we used to as the primary key to check the performance improvement at each evaluation round.
+  # monitoring: [] # Extended monitoring methods or metric, e.g., 'dissim' for B-local dissimilarity
+  count_flops: False
+
+# -----------------wandb-----------------
+# wandb:
+  # use: False
+  # name_user: ''
+  # name_project: ''
+  # online_track: True # whether to track the results in an online manner, i.e., log results at every evaluation round
+  # client_train_info: True # whether to track the training info of clients
+
+# -----------------Federated Algorithms-----------------
+
+# -----------------Asynchronous Training Strategies-----------------
+
+# -----------------Differential Privacy-----------------
+
+# -----------------Auto-tuning Components-----------------
+
+# -----------------Attack-----------------
