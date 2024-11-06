@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+int dir[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}, n, m, ans;
+char maze[1005][1005];
+bool vis[1005][1005];
+bool in(int x, int y)
+{
+    return 0 <= x && x < n && 0 <= y && y < m;
+}
+void dfs(int x, int y)
+{
+    vis[x][y] = true;
+    for (int i = 0; i < 4; i++)
+    {
+        int tx = x + dir[i][0];
+        int ty = y + dir[i][1];
+        if (in(tx, ty) && !vis[tx][ty] && maze[tx][ty] == '#')
+        {
+            dfs(tx, ty);
+        }
+    }
+}
+int main ()
+{
+    freopen("hiking.in", "r", stdin);
+    freopen("hiking.out", "w", stdout);
+    cin >> n >> m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> maze[i][j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; i++)
+        {
+            if (!vis[i][j] && maze[i][j] == '#')
+            {
+                dfs(i, j);
+                ans++;
+            }
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}

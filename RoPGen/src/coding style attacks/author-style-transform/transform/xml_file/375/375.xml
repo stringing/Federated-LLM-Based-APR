@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C++" filename="program_file/target_author_file/375/375.cpp" pos:tabs="8"><cpp:include pos:start="1:1" pos:end="1:18">#<cpp:directive pos:start="1:2" pos:end="1:8">include</cpp:directive><cpp:file pos:start="1:9" pos:end="1:18">&lt;iostream&gt;</cpp:file></cpp:include>
+<using pos:start="2:1" pos:end="2:20">using <namespace pos:start="2:7" pos:end="2:20">namespace <name pos:start="2:17" pos:end="2:19">std</name>;</namespace></using>
+<function pos:start="3:1" pos:end="29:1"><type pos:start="3:1" pos:end="3:3"><name pos:start="3:1" pos:end="3:3">int</name></type> <name pos:start="3:5" pos:end="3:8">main</name><parameter_list pos:start="3:9" pos:end="3:10">()</parameter_list><block pos:start="3:11" pos:end="29:1">{<block_content pos:start="4:1" pos:end="28:8">
+<decl_stmt pos:start="4:1" pos:end="4:12"><decl pos:start="4:1" pos:end="4:5"><type pos:start="4:1" pos:end="4:3"><name pos:start="4:1" pos:end="4:3">int</name></type> <name pos:start="4:5" pos:end="4:5">n</name></decl>,<decl pos:start="4:7" pos:end="4:7"><type ref="prev" pos:start="4:1" pos:end="4:3"/><name pos:start="4:7" pos:end="4:7">a</name></decl>,<decl pos:start="4:9" pos:end="4:9"><type ref="prev" pos:start="4:1" pos:end="4:3"/><name pos:start="4:9" pos:end="4:9">b</name></decl>,<decl pos:start="4:11" pos:end="4:11"><type ref="prev" pos:start="4:1" pos:end="4:3"/><name pos:start="4:11" pos:end="4:11">c</name></decl>;</decl_stmt>
+<expr_stmt pos:start="5:1" pos:end="5:13"><expr pos:start="5:1" pos:end="5:12"><name pos:start="5:1" pos:end="5:3">cin</name><operator pos:start="5:4" pos:end="5:5">&gt;&gt;</operator><name pos:start="5:6" pos:end="5:6">n</name><operator pos:start="5:7" pos:end="5:8">&gt;&gt;</operator><name pos:start="5:9" pos:end="5:9">a</name><operator pos:start="5:10" pos:end="5:11">&gt;&gt;</operator><name pos:start="5:12" pos:end="5:12">b</name></expr>;</expr_stmt>
+
+
+
+
+    
+
+    <decl_stmt pos:start="12:5" pos:end="12:29"><decl pos:start="12:5" pos:end="12:28"><type pos:start="12:5" pos:end="12:10"><name pos:start="12:5" pos:end="12:10">double</name></type> <name pos:start="12:12" pos:end="12:14">dis</name> <init pos:start="12:16" pos:end="12:28">= <expr pos:start="12:18" pos:end="12:28"><name pos:start="12:18" pos:end="12:18">n</name> <operator pos:start="12:20" pos:end="12:20">*</operator> <name pos:start="12:22" pos:end="12:22">a</name> <operator pos:start="12:24" pos:end="12:24">-</operator> <literal type="number" pos:start="12:26" pos:end="12:28">600</literal></expr></init></decl>;</decl_stmt>
+
+    
+
+    <decl_stmt pos:start="16:5" pos:end="16:23"><decl pos:start="16:5" pos:end="16:22"><type pos:start="16:5" pos:end="16:10"><name pos:start="16:5" pos:end="16:10">double</name></type> <name pos:start="16:12" pos:end="16:14">sub</name> <init pos:start="16:16" pos:end="16:22">= <expr pos:start="16:18" pos:end="16:22"><name pos:start="16:18" pos:end="16:18">b</name> <operator pos:start="16:20" pos:end="16:20">-</operator> <name pos:start="16:22" pos:end="16:22">a</name></expr></init></decl>;</decl_stmt>
+  <decl_stmt pos:start="17:3" pos:end="17:22"><decl pos:start="17:3" pos:end="17:21"><type pos:start="17:3" pos:end="17:8"><name pos:start="17:3" pos:end="17:8">double</name></type>  <name pos:start="17:11" pos:end="17:13">min</name><init pos:start="17:14" pos:end="17:21">=<expr pos:start="17:15" pos:end="17:21"><name pos:start="17:15" pos:end="17:17">dis</name><operator pos:start="17:18" pos:end="17:18">/</operator><name pos:start="17:19" pos:end="17:21">sub</name></expr></init></decl>;</decl_stmt>
+   
+    
+
+    <decl_stmt pos:start="21:5" pos:end="21:28"><decl pos:start="21:5" pos:end="21:27"><type pos:start="21:5" pos:end="21:7"><name pos:start="21:5" pos:end="21:7">int</name></type> <name pos:start="21:9" pos:end="21:15">min_int</name> <init pos:start="21:17" pos:end="21:27">= <expr pos:start="21:19" pos:end="21:27"><call pos:start="21:19" pos:end="21:27"><name pos:start="21:19" pos:end="21:21">int</name> <argument_list pos:start="21:23" pos:end="21:27">(<argument pos:start="21:24" pos:end="21:26"><expr pos:start="21:24" pos:end="21:26"><name pos:start="21:24" pos:end="21:26">min</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <if_stmt pos:start="23:5" pos:end="27:5"><if pos:start="23:5" pos:end="27:5">if <condition pos:start="23:8" pos:end="23:23">(<expr pos:start="23:9" pos:end="23:22"><name pos:start="23:9" pos:end="23:15">min_int</name> <operator pos:start="23:17" pos:end="23:18">!=</operator> <name pos:start="23:20" pos:end="23:22">min</name></expr>)</condition> <block pos:start="23:25" pos:end="27:5">{<block_content pos:start="25:9" pos:end="25:18">
+
+        <expr_stmt pos:start="25:9" pos:end="25:18"><expr pos:start="25:9" pos:end="25:17"><name pos:start="25:9" pos:end="25:15">min_int</name><operator pos:start="25:16" pos:end="25:17">++</operator></expr>;</expr_stmt>
+
+    </block_content>}</block></if></if_stmt>
+<expr_stmt pos:start="28:1" pos:end="28:8"><expr pos:start="28:1" pos:end="28:7"><name pos:start="28:1" pos:end="28:4">cout</name><operator pos:start="28:5" pos:end="28:6">&lt;&lt;</operator><name pos:start="28:7" pos:end="28:7">c</name></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</unit>

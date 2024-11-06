@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C++" filename="program_file/target_author_file/130/130.cpp" pos:tabs="8"><cpp:include pos:start="1:1" pos:end="1:23">#<cpp:directive pos:start="1:2" pos:end="1:8">include</cpp:directive><cpp:file pos:start="1:9" pos:end="1:23">&lt;bits/stdc++.h&gt;</cpp:file></cpp:include>
+<using pos:start="2:1" pos:end="2:20">using <namespace pos:start="2:7" pos:end="2:20">namespace <name pos:start="2:17" pos:end="2:19">std</name>;</namespace></using>
+<function pos:start="3:1" pos:end="36:1"><type pos:start="3:1" pos:end="3:3"><name pos:start="3:1" pos:end="3:3">int</name></type> <name pos:start="3:5" pos:end="3:8">main</name><parameter_list pos:start="3:9" pos:end="3:10">()</parameter_list>
+<block pos:start="4:1" pos:end="36:1">{<block_content pos:start="5:5" pos:end="35:13">
+    <decl_stmt pos:start="5:5" pos:end="5:12"><decl pos:start="5:5" pos:end="5:9"><type pos:start="5:5" pos:end="5:7"><name pos:start="5:5" pos:end="5:7">int</name></type> <name pos:start="5:9" pos:end="5:9">n</name></decl>,<decl pos:start="5:11" pos:end="5:11"><type ref="prev" pos:start="5:5" pos:end="5:7"/><name pos:start="5:11" pos:end="5:11">m</name></decl>;</decl_stmt>
+    <expr_stmt pos:start="6:5" pos:end="6:11"><expr pos:start="6:5" pos:end="6:10"><name pos:start="6:5" pos:end="6:7">cin</name><operator pos:start="6:8" pos:end="6:9">&gt;&gt;</operator><name pos:start="6:10" pos:end="6:10">n</name></expr>;</expr_stmt>
+    <expr_stmt pos:start="7:5" pos:end="7:10"><expr pos:start="7:5" pos:end="7:9"><name pos:start="7:5" pos:end="7:5">n</name><operator pos:start="7:6" pos:end="7:7">*=</operator><literal type="number" pos:start="7:8" pos:end="7:9">60</literal></expr>;</expr_stmt>
+    <do pos:start="8:5" pos:end="33:16">do
+    <block pos:start="9:5" pos:end="33:5">{<block_content pos:start="10:9" pos:end="32:9">
+        <decl_stmt pos:start="10:9" pos:end="10:17"><decl pos:start="10:9" pos:end="10:16"><type pos:start="10:9" pos:end="10:14"><name pos:start="10:9" pos:end="10:14">string</name></type> <name pos:start="10:16" pos:end="10:16">a</name></decl>;</decl_stmt>
+        <expr_stmt pos:start="11:9" pos:end="11:15"><expr pos:start="11:9" pos:end="11:14"><name pos:start="11:9" pos:end="11:11">cin</name><operator pos:start="11:12" pos:end="11:13">&gt;&gt;</operator><name pos:start="11:14" pos:end="11:14">a</name></expr>;</expr_stmt>
+        <if_stmt pos:start="12:9" pos:end="23:9"><if pos:start="12:9" pos:end="23:9">if<condition pos:start="12:11" pos:end="12:27">(<expr pos:start="12:12" pos:end="12:26"><name pos:start="12:12" pos:end="12:12">a</name><operator pos:start="12:13" pos:end="12:14">==</operator><literal type="string" pos:start="12:15" pos:end="12:26">"kaomianjin"</literal></expr>)</condition>
+        <block pos:start="13:9" pos:end="23:9">{<block_content pos:start="14:13" pos:end="22:21">
+            <expr_stmt pos:start="14:13" pos:end="14:19"><expr pos:start="14:13" pos:end="14:18"><name pos:start="14:13" pos:end="14:15">cin</name><operator pos:start="14:16" pos:end="14:17">&gt;&gt;</operator><name pos:start="14:18" pos:end="14:18">m</name></expr>;</expr_stmt>
+            <expr_stmt pos:start="15:13" pos:end="15:19"><expr pos:start="15:13" pos:end="15:18"><name pos:start="15:13" pos:end="15:15">cin</name><operator pos:start="15:16" pos:end="15:17">&gt;&gt;</operator><name pos:start="15:18" pos:end="15:18">a</name></expr>;</expr_stmt>
+            <if_stmt pos:start="16:13" pos:end="20:13"><if pos:start="16:13" pos:end="20:13">if<condition pos:start="16:15" pos:end="16:33">(<expr pos:start="16:16" pos:end="16:32"><name pos:start="16:16" pos:end="16:16">a</name><operator pos:start="16:17" pos:end="16:18">==</operator><literal type="string" pos:start="16:19" pos:end="16:32">"tingtingting"</literal></expr>)</condition>
+            <block pos:start="17:13" pos:end="20:13">{<block_content pos:start="18:17" pos:end="19:25">
+                <expr_stmt pos:start="18:17" pos:end="18:32"><expr pos:start="18:17" pos:end="18:31"><name pos:start="18:17" pos:end="18:20">cout</name><operator pos:start="18:21" pos:end="18:22">&lt;&lt;</operator><literal type="string" pos:start="18:23" pos:end="18:31">"Hahaha."</literal></expr>;</expr_stmt>
+                <return pos:start="19:17" pos:end="19:25">return <expr pos:start="19:24" pos:end="19:24"><literal type="number" pos:start="19:24" pos:end="19:24">0</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt pos:start="21:13" pos:end="21:37"><expr pos:start="21:13" pos:end="21:36"><name pos:start="21:13" pos:end="21:16">cout</name><operator pos:start="21:17" pos:end="21:18">&lt;&lt;</operator><literal type="string" pos:start="21:19" pos:end="21:36">"Congratulations!"</literal></expr>;</expr_stmt>
+            <return pos:start="22:13" pos:end="22:21">return <expr pos:start="22:20" pos:end="22:20"><literal type="number" pos:start="22:20" pos:end="22:20">0</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <if_stmt pos:start="24:9" pos:end="32:9"><if pos:start="24:9" pos:end="27:9">if<condition pos:start="24:11" pos:end="24:29">(<expr pos:start="24:12" pos:end="24:28"><name pos:start="24:12" pos:end="24:12">a</name><operator pos:start="24:13" pos:end="24:14">==</operator><literal type="string" pos:start="24:15" pos:end="24:28">"tingtingting"</literal></expr>)</condition>
+        <block pos:start="25:9" pos:end="27:9">{<block_content pos:start="26:13" pos:end="26:18">
+            <break pos:start="26:13" pos:end="26:18">break;</break>
+        </block_content>}</block></if>
+        <else pos:start="28:9" pos:end="32:9">else
+        <block pos:start="29:9" pos:end="32:9">{<block_content pos:start="30:13" pos:end="31:17">
+            <expr_stmt pos:start="30:13" pos:end="30:19"><expr pos:start="30:13" pos:end="30:18"><name pos:start="30:13" pos:end="30:15">cin</name><operator pos:start="30:16" pos:end="30:17">&gt;&gt;</operator><name pos:start="30:18" pos:end="30:18">m</name></expr>;</expr_stmt>
+            <expr_stmt pos:start="31:13" pos:end="31:17"><expr pos:start="31:13" pos:end="31:16"><name pos:start="31:13" pos:end="31:13">n</name><operator pos:start="31:14" pos:end="31:15">-=</operator><name pos:start="31:16" pos:end="31:16">m</name></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block>while<condition pos:start="33:11" pos:end="33:15">(<expr pos:start="33:12" pos:end="33:14"><name pos:start="33:12" pos:end="33:12">n</name><operator pos:start="33:13" pos:end="33:13">&gt;</operator><literal type="number" pos:start="33:14" pos:end="33:14">0</literal></expr>)</condition>;</do>
+    <expr_stmt pos:start="34:5" pos:end="34:27"><expr pos:start="34:5" pos:end="34:26"><name pos:start="34:5" pos:end="34:8">cout</name><operator pos:start="34:9" pos:end="34:10">&lt;&lt;</operator><literal type="string" pos:start="34:11" pos:end="34:26">"Unfortunately."</literal></expr>;</expr_stmt>
+    <return pos:start="35:5" pos:end="35:13">return <expr pos:start="35:12" pos:end="35:12"><literal type="number" pos:start="35:12" pos:end="35:12">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C++" filename="program_file/target_author_file/193/193.cpp" pos:tabs="8"><cpp:include pos:start="1:1" pos:end="1:24">#<cpp:directive pos:start="1:2" pos:end="1:8">include</cpp:directive> <cpp:file pos:start="1:10" pos:end="1:24">&lt;bits/stdc++.h&gt;</cpp:file></cpp:include>
+<using pos:start="2:1" pos:end="2:20">using <namespace pos:start="2:7" pos:end="2:20">namespace <name pos:start="2:17" pos:end="2:19">std</name>;</namespace></using>
+<function pos:start="3:1" pos:end="5:1"><type pos:start="3:1" pos:end="3:3"><name pos:start="3:1" pos:end="3:3">int</name></type> <name pos:start="3:5" pos:end="3:8">main</name><parameter_list pos:start="3:9" pos:end="3:10">()</parameter_list><block pos:start="3:11" pos:end="5:1">{<block_content>
+    
+</block_content>}</block></function>
+</unit>

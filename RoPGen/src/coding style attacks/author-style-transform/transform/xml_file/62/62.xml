@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C++" filename="program_file/target_author_file/62/62.cpp" pos:tabs="8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<cpp:include pos:start="40:1" pos:end="40:23">#<cpp:directive pos:start="40:2" pos:end="40:8">include</cpp:directive><cpp:file pos:start="40:9" pos:end="40:23">&lt;bits/stdc++.h&gt;</cpp:file></cpp:include>
+<using pos:start="41:1" pos:end="41:20">using <namespace pos:start="41:7" pos:end="41:20">namespace <name pos:start="41:17" pos:end="41:19">std</name>;</namespace></using>
+<decl_stmt pos:start="42:1" pos:end="42:42"><decl pos:start="42:1" pos:end="42:16"><type pos:start="42:1" pos:end="42:3"><name pos:start="42:1" pos:end="42:3">int</name></type> <name pos:start="42:5" pos:end="42:16"><name pos:start="42:5" pos:end="42:8">sumb</name><index pos:start="42:9" pos:end="42:16">[<expr pos:start="42:10" pos:end="42:15"><literal type="number" pos:start="42:10" pos:end="42:15">100005</literal></expr>]</index></name></decl>,<decl pos:start="42:18" pos:end="42:29"><type ref="prev" pos:start="42:1" pos:end="42:3"/><name pos:start="42:18" pos:end="42:29"><name pos:start="42:18" pos:end="42:21">sumg</name><index pos:start="42:22" pos:end="42:29">[<expr pos:start="42:23" pos:end="42:28"><literal type="number" pos:start="42:23" pos:end="42:28">100005</literal></expr>]</index></name></decl>,<decl pos:start="42:31" pos:end="42:41"><type ref="prev" pos:start="42:1" pos:end="42:3"/><name pos:start="42:31" pos:end="42:41"><name pos:start="42:31" pos:end="42:33">sum</name><index pos:start="42:34" pos:end="42:41">[<expr pos:start="42:35" pos:end="42:40"><literal type="number" pos:start="42:35" pos:end="42:40">100005</literal></expr>]</index></name></decl>;</decl_stmt>
+<decl_stmt pos:start="43:1" pos:end="43:20"><decl pos:start="43:1" pos:end="43:19"><type pos:start="43:1" pos:end="43:4"><name pos:start="43:1" pos:end="43:4">bool</name></type> <name pos:start="43:6" pos:end="43:19"><name pos:start="43:6" pos:end="43:11">ismale</name><index pos:start="43:12" pos:end="43:19">[<expr pos:start="43:13" pos:end="43:18"><literal type="number" pos:start="43:13" pos:end="43:18">100005</literal></expr>]</index></name></decl>;</decl_stmt>
+<decl_stmt pos:start="44:1" pos:end="44:12"><decl pos:start="44:1" pos:end="44:11"><type pos:start="44:1" pos:end="44:8"><name pos:start="44:1" pos:end="44:8"><name pos:start="44:1" pos:end="44:3">set</name><argument_list type="generic" pos:start="44:4" pos:end="44:8">&lt;<argument pos:start="44:5" pos:end="44:7"><expr pos:start="44:5" pos:end="44:7"><name pos:start="44:5" pos:end="44:7">int</name></expr></argument>&gt;</argument_list></name></type> <name pos:start="44:10" pos:end="44:11">se</name></decl>;</decl_stmt>
+<decl_stmt pos:start="45:1" pos:end="45:10"><decl pos:start="45:1" pos:end="45:5"><type pos:start="45:1" pos:end="45:3"><name pos:start="45:1" pos:end="45:3">int</name></type> <name pos:start="45:5" pos:end="45:5">n</name></decl>,<decl pos:start="45:7" pos:end="45:9"><type ref="prev" pos:start="45:1" pos:end="45:3"/><name pos:start="45:7" pos:end="45:9">ans</name></decl>;</decl_stmt>
+<function pos:start="46:1" pos:end="79:1"><type pos:start="46:1" pos:end="46:3"><name pos:start="46:1" pos:end="46:3">int</name></type> <name pos:start="46:5" pos:end="46:8">main</name><parameter_list pos:start="46:9" pos:end="46:10">()</parameter_list>
+<block pos:start="47:1" pos:end="79:1">{<block_content pos:start="48:5" pos:end="78:14">
+    <expr_stmt pos:start="48:5" pos:end="48:34"><expr pos:start="48:5" pos:end="48:33"><call pos:start="48:5" pos:end="48:33"><name pos:start="48:5" pos:end="48:11">freopen</name><argument_list pos:start="48:12" pos:end="48:33">(<argument pos:start="48:13" pos:end="48:22"><expr pos:start="48:13" pos:end="48:22"><literal type="string" pos:start="48:13" pos:end="48:22">"match.in"</literal></expr></argument>,<argument pos:start="48:24" pos:end="48:26"><expr pos:start="48:24" pos:end="48:26"><literal type="string" pos:start="48:24" pos:end="48:26">"r"</literal></expr></argument>,<argument pos:start="48:28" pos:end="48:32"><expr pos:start="48:28" pos:end="48:32"><name pos:start="48:28" pos:end="48:32">stdin</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="49:5" pos:end="49:36"><expr pos:start="49:5" pos:end="49:35"><call pos:start="49:5" pos:end="49:35"><name pos:start="49:5" pos:end="49:11">freopen</name><argument_list pos:start="49:12" pos:end="49:35">(<argument pos:start="49:13" pos:end="49:23"><expr pos:start="49:13" pos:end="49:23"><literal type="string" pos:start="49:13" pos:end="49:23">"match.out"</literal></expr></argument>,<argument pos:start="49:25" pos:end="49:27"><expr pos:start="49:25" pos:end="49:27"><literal type="string" pos:start="49:25" pos:end="49:27">"w"</literal></expr></argument>,<argument pos:start="49:29" pos:end="49:34"><expr pos:start="49:29" pos:end="49:34"><name pos:start="49:29" pos:end="49:34">stdout</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="50:5" pos:end="50:11"><expr pos:start="50:5" pos:end="50:10"><name pos:start="50:5" pos:end="50:7">cin</name><operator pos:start="50:8" pos:end="50:9">&gt;&gt;</operator><name pos:start="50:10" pos:end="50:10">n</name></expr>;</expr_stmt>
+    <for pos:start="51:5" pos:end="61:5">for<control pos:start="51:8" pos:end="51:25">(<init pos:start="51:9" pos:end="51:16"><decl pos:start="51:9" pos:end="51:15"><type pos:start="51:9" pos:end="51:11"><name pos:start="51:9" pos:end="51:11">int</name></type> <name pos:start="51:13" pos:end="51:13">i</name><init pos:start="51:14" pos:end="51:15">=<expr pos:start="51:15" pos:end="51:15"><literal type="number" pos:start="51:15" pos:end="51:15">1</literal></expr></init></decl>;</init><condition pos:start="51:17" pos:end="51:21"><expr pos:start="51:17" pos:end="51:20"><name pos:start="51:17" pos:end="51:17">i</name><operator pos:start="51:18" pos:end="51:19">&lt;=</operator><name pos:start="51:20" pos:end="51:20">n</name></expr>;</condition><incr pos:start="51:22" pos:end="51:24"><expr pos:start="51:22" pos:end="51:24"><operator pos:start="51:22" pos:end="51:23">++</operator><name pos:start="51:24" pos:end="51:24">i</name></expr></incr>)</control>
+    <block pos:start="52:5" pos:end="61:5">{<block_content pos:start="53:9" pos:end="60:9">
+        <expr_stmt pos:start="53:9" pos:end="53:23"><expr pos:start="53:9" pos:end="53:22"><name pos:start="53:9" pos:end="53:11">cin</name><operator pos:start="53:12" pos:end="53:13">&gt;&gt;</operator><name pos:start="53:14" pos:end="53:22"><name pos:start="53:14" pos:end="53:19">ismale</name><index pos:start="53:20" pos:end="53:22">[<expr pos:start="53:21" pos:end="53:21"><name pos:start="53:21" pos:end="53:21">i</name></expr>]</index></name></expr>;</expr_stmt>
+        <if_stmt pos:start="54:9" pos:end="60:9"><if pos:start="54:9" pos:end="57:9">if<condition pos:start="54:11" pos:end="54:22">(<expr pos:start="54:12" pos:end="54:21"><operator pos:start="54:12" pos:end="54:12">!</operator><name pos:start="54:13" pos:end="54:21"><name pos:start="54:13" pos:end="54:18">ismale</name><index pos:start="54:19" pos:end="54:21">[<expr pos:start="54:20" pos:end="54:20"><name pos:start="54:20" pos:end="54:20">i</name></expr>]</index></name></expr>)</condition>
+        <block pos:start="55:9" pos:end="57:9">{<block_content pos:start="56:13" pos:end="56:30">
+            <expr_stmt pos:start="56:13" pos:end="56:30"><expr pos:start="56:13" pos:end="56:29"><name pos:start="56:13" pos:end="56:18"><name pos:start="56:13" pos:end="56:15">sum</name><index pos:start="56:16" pos:end="56:18">[<expr pos:start="56:17" pos:end="56:17"><name pos:start="56:17" pos:end="56:17">i</name></expr>]</index></name><operator pos:start="56:19" pos:end="56:19">=</operator><name pos:start="56:20" pos:end="56:27"><name pos:start="56:20" pos:end="56:22">sum</name><index pos:start="56:23" pos:end="56:27">[<expr pos:start="56:24" pos:end="56:26"><name pos:start="56:24" pos:end="56:24">i</name><operator pos:start="56:25" pos:end="56:25">-</operator><literal type="number" pos:start="56:26" pos:end="56:26">1</literal></expr>]</index></name><operator pos:start="56:28" pos:end="56:28">-</operator><literal type="number" pos:start="56:29" pos:end="56:29">1</literal></expr>;</expr_stmt>
+        </block_content>}</block></if><else pos:start="57:10" pos:end="60:9">else
+        <block pos:start="58:9" pos:end="60:9">{<block_content pos:start="59:13" pos:end="59:30">
+            <expr_stmt pos:start="59:13" pos:end="59:30"><expr pos:start="59:13" pos:end="59:29"><name pos:start="59:13" pos:end="59:18"><name pos:start="59:13" pos:end="59:15">sum</name><index pos:start="59:16" pos:end="59:18">[<expr pos:start="59:17" pos:end="59:17"><name pos:start="59:17" pos:end="59:17">i</name></expr>]</index></name><operator pos:start="59:19" pos:end="59:19">=</operator><name pos:start="59:20" pos:end="59:27"><name pos:start="59:20" pos:end="59:22">sum</name><index pos:start="59:23" pos:end="59:27">[<expr pos:start="59:24" pos:end="59:26"><name pos:start="59:24" pos:end="59:24">i</name><operator pos:start="59:25" pos:end="59:25">-</operator><literal type="number" pos:start="59:26" pos:end="59:26">1</literal></expr>]</index></name><operator pos:start="59:28" pos:end="59:28">+</operator><literal type="number" pos:start="59:29" pos:end="59:29">1</literal></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></for>
+    <for pos:start="62:5" pos:end="77:5">for<control pos:start="62:8" pos:end="62:25">(<init pos:start="62:9" pos:end="62:16"><decl pos:start="62:9" pos:end="62:15"><type pos:start="62:9" pos:end="62:11"><name pos:start="62:9" pos:end="62:11">int</name></type> <name pos:start="62:13" pos:end="62:13">i</name><init pos:start="62:14" pos:end="62:15">=<expr pos:start="62:15" pos:end="62:15"><literal type="number" pos:start="62:15" pos:end="62:15">1</literal></expr></init></decl>;</init><condition pos:start="62:17" pos:end="62:21"><expr pos:start="62:17" pos:end="62:20"><name pos:start="62:17" pos:end="62:17">i</name><operator pos:start="62:18" pos:end="62:19">&lt;=</operator><name pos:start="62:20" pos:end="62:20">n</name></expr>;</condition><incr pos:start="62:22" pos:end="62:24"><expr pos:start="62:22" pos:end="62:24"><operator pos:start="62:22" pos:end="62:23">++</operator><name pos:start="62:24" pos:end="62:24">i</name></expr></incr>)</control>
+    <block pos:start="63:5" pos:end="77:5">{<block_content pos:start="64:9" pos:end="76:9">
+        <if_stmt pos:start="64:9" pos:end="67:9"><if pos:start="64:9" pos:end="67:9">if<condition pos:start="64:11" pos:end="64:28">(<expr pos:start="64:12" pos:end="64:27"><call pos:start="64:12" pos:end="64:27"><name pos:start="64:12" pos:end="64:19"><name pos:start="64:12" pos:end="64:13">se</name><operator pos:start="64:14" pos:end="64:14">.</operator><name pos:start="64:15" pos:end="64:19">count</name></name><argument_list pos:start="64:20" pos:end="64:27">(<argument pos:start="64:21" pos:end="64:26"><expr pos:start="64:21" pos:end="64:26"><name pos:start="64:21" pos:end="64:26"><name pos:start="64:21" pos:end="64:23">sum</name><index pos:start="64:24" pos:end="64:26">[<expr pos:start="64:25" pos:end="64:25"><name pos:start="64:25" pos:end="64:25">i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>)</condition>
+        <block pos:start="65:9" pos:end="67:9">{<block_content pos:start="66:13" pos:end="66:21">
+            <continue pos:start="66:13" pos:end="66:21">continue;</continue>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt pos:start="68:9" pos:end="68:26"><expr pos:start="68:9" pos:end="68:25"><call pos:start="68:9" pos:end="68:25"><name pos:start="68:9" pos:end="68:17"><name pos:start="68:9" pos:end="68:10">se</name><operator pos:start="68:11" pos:end="68:11">.</operator><name pos:start="68:12" pos:end="68:17">insert</name></name><argument_list pos:start="68:18" pos:end="68:25">(<argument pos:start="68:19" pos:end="68:24"><expr pos:start="68:19" pos:end="68:24"><name pos:start="68:19" pos:end="68:24"><name pos:start="68:19" pos:end="68:21">sum</name><index pos:start="68:22" pos:end="68:24">[<expr pos:start="68:23" pos:end="68:23"><name pos:start="68:23" pos:end="68:23">i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt pos:start="69:9" pos:end="69:23"><decl pos:start="69:9" pos:end="69:22"><type pos:start="69:9" pos:end="69:11"><name pos:start="69:9" pos:end="69:11">int</name></type> <name pos:start="69:13" pos:end="69:15">now</name><init pos:start="69:16" pos:end="69:22">=<expr pos:start="69:17" pos:end="69:22"><name pos:start="69:17" pos:end="69:22"><name pos:start="69:17" pos:end="69:19">sum</name><index pos:start="69:20" pos:end="69:22">[<expr pos:start="69:21" pos:end="69:21"><name pos:start="69:21" pos:end="69:21">i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+        <for pos:start="70:9" pos:end="76:9">for<control pos:start="70:12" pos:end="70:28">(<init pos:start="70:13" pos:end="70:20"><decl pos:start="70:13" pos:end="70:19"><type pos:start="70:13" pos:end="70:15"><name pos:start="70:13" pos:end="70:15">int</name></type> <name pos:start="70:17" pos:end="70:17">j</name><init pos:start="70:18" pos:end="70:19">=<expr pos:start="70:19" pos:end="70:19"><name pos:start="70:19" pos:end="70:19">n</name></expr></init></decl>;</init><condition pos:start="70:21" pos:end="70:24"><expr pos:start="70:21" pos:end="70:23"><name pos:start="70:21" pos:end="70:21">j</name><operator pos:start="70:22" pos:end="70:22">&gt;</operator><name pos:start="70:23" pos:end="70:23">i</name></expr>;</condition><incr pos:start="70:25" pos:end="70:27"><expr pos:start="70:25" pos:end="70:27"><operator pos:start="70:25" pos:end="70:26">--</operator><name pos:start="70:27" pos:end="70:27">j</name></expr></incr>)</control>
+        <block pos:start="71:9" pos:end="76:9">{<block_content pos:start="72:13" pos:end="75:13">
+            <if_stmt pos:start="72:13" pos:end="75:13"><if pos:start="72:13" pos:end="75:13">if<condition pos:start="72:15" pos:end="72:27">(<expr pos:start="72:16" pos:end="72:26"><name pos:start="72:16" pos:end="72:21"><name pos:start="72:16" pos:end="72:18">sum</name><index pos:start="72:19" pos:end="72:21">[<expr pos:start="72:20" pos:end="72:20"><name pos:start="72:20" pos:end="72:20">j</name></expr>]</index></name><operator pos:start="72:22" pos:end="72:23">==</operator><name pos:start="72:24" pos:end="72:26">now</name></expr>)</condition>
+            <block pos:start="73:13" pos:end="75:13">{<block_content pos:start="74:17" pos:end="74:33">
+                <expr_stmt pos:start="74:17" pos:end="74:33"><expr pos:start="74:17" pos:end="74:32"><name pos:start="74:17" pos:end="74:19">ans</name><operator pos:start="74:20" pos:end="74:20">=</operator><call pos:start="74:21" pos:end="74:32"><name pos:start="74:21" pos:end="74:23">max</name><argument_list pos:start="74:24" pos:end="74:32">(<argument pos:start="74:25" pos:end="74:27"><expr pos:start="74:25" pos:end="74:27"><name pos:start="74:25" pos:end="74:27">ans</name></expr></argument>,<argument pos:start="74:29" pos:end="74:31"><expr pos:start="74:29" pos:end="74:31"><name pos:start="74:29" pos:end="74:29">j</name><operator pos:start="74:30" pos:end="74:30">-</operator><name pos:start="74:31" pos:end="74:31">i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></for>
+    <expr_stmt pos:start="78:5" pos:end="78:14"><expr pos:start="78:5" pos:end="78:13"><name pos:start="78:5" pos:end="78:8">cout</name><operator pos:start="78:9" pos:end="78:10">&lt;&lt;</operator><name pos:start="78:11" pos:end="78:13">ans</name></expr>;</expr_stmt>
+</block_content>}</block></function>
+</unit>

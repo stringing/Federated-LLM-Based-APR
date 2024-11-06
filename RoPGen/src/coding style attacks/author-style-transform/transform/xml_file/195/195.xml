@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C++" filename="program_file/target_author_file/195/195.cpp" pos:tabs="8"><cpp:include pos:start="1:1" pos:end="1:19">#<cpp:directive pos:start="1:2" pos:end="1:8">include</cpp:directive> <cpp:file pos:start="1:10" pos:end="1:19">&lt;iostream&gt;</cpp:file></cpp:include>
+<cpp:include pos:start="2:1" pos:end="2:17">#<cpp:directive pos:start="2:2" pos:end="2:8">include</cpp:directive> <cpp:file pos:start="2:10" pos:end="2:17">&lt;string&gt;</cpp:file></cpp:include>
+<using pos:start="3:1" pos:end="3:20">using <namespace pos:start="3:7" pos:end="3:20">namespace <name pos:start="3:17" pos:end="3:19">std</name>;</namespace></using>
+<function pos:start="4:1" pos:end="9:1"><type pos:start="4:1" pos:end="4:3"><name pos:start="4:1" pos:end="4:3">int</name></type> <name pos:start="4:5" pos:end="4:8">main</name><parameter_list pos:start="4:9" pos:end="4:10">()</parameter_list> <block pos:start="4:12" pos:end="9:1">{<block_content pos:start="5:5" pos:end="8:13">
+    <decl_stmt pos:start="5:5" pos:end="5:13"><decl pos:start="5:5" pos:end="5:12"><type pos:start="5:5" pos:end="5:10"><name pos:start="5:5" pos:end="5:10">string</name></type> <name pos:start="5:12" pos:end="5:12">s</name></decl>;</decl_stmt>
+    <expr_stmt pos:start="6:5" pos:end="6:20"><expr pos:start="6:5" pos:end="6:19"><call pos:start="6:5" pos:end="6:19"><name pos:start="6:5" pos:end="6:11">getline</name><argument_list pos:start="6:12" pos:end="6:19">(<argument pos:start="6:13" pos:end="6:15"><expr pos:start="6:13" pos:end="6:15"><name pos:start="6:13" pos:end="6:15">cin</name></expr></argument>, <argument pos:start="6:18" pos:end="6:18"><expr pos:start="6:18" pos:end="6:18"><name pos:start="6:18" pos:end="6:18">s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    
+    <return pos:start="8:5" pos:end="8:13">return <expr pos:start="8:12" pos:end="8:12"><literal type="number" pos:start="8:12" pos:end="8:12">0</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>
